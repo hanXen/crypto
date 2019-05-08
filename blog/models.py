@@ -17,3 +17,13 @@ class Announce(models.Model):
 
     def __str__(self):
         return self.title
+
+class Member(models.Model):
+    type = models.CharField(max_length=200, default='Researcher')
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200, null=True, blank=True)
+    thumb = models.URLField(max_length=200, null=True, blank=True)
+    desc = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

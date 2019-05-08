@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="img/headers-bg/1.jpg">
+	<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/1.jpg" %}">
 		<div class="breadcrumb-area">
 			<a href="{% url 'index_page' %}">Home</a> / <span>Notices</span>
 		</div>
@@ -13,15 +13,26 @@
     <!-- Services section start -->
 	<section class="services-section spad">
 		<div class="container-fluid services-warp">
-            <div class="container p-0">
-                <div class="row">
-                    <h3 class="sp-title" style="text-align: center">Director</h3>
-                </div>
-                <figure class="intro-img mt-5 mt-xl-0">
-                    <img src="{% static "img/intro.jpg" %}" alt="">
-                </figure>
-                <p>Hyoung Joong Kim (Professor, Korea University)</p>
-                <p>khj-@korea.ac.kr</p>
+            <div class="container p-0" style="align-content: center">
+                <h3 class="sp-title" style="text-align: center">Notice</h3>
+                <table style="align-content: center" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">제목</th>
+                            <th scope="col">작성자</th>
+                            <th scope="col">등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ann in announces %}
+                            <tr>
+                                <td><a href="{% url 'index_page' %}" style="color: #000000">{{ ann.title }}</a></td>
+                                <td>{{ ann.author }}</td>
+                                <td>{{ ann.published_date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
             <br/>
 		</div>

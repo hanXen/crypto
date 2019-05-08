@@ -79,6 +79,28 @@ ol {
 /*---------------------
 	Helper CSS
 -----------------------*/
+table {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+  margin : 20px 10px;
+}
+table th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+table td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
 .spad {
 	padding-top: 130px;
 	padding-bottom: 130px;
@@ -704,7 +726,7 @@ ol {
 
 .hs-item .hs-title {
 	color: #fff;
-	font-size: 120px;
+	font-size: 100px;
 	font-weight: 300;
 	margin-bottom: 40px;
 	position: relative;

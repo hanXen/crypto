@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<!-- Page top section start -->
+	<div class="page-top-area set-bg" data-setbg="img/headers-bg/1.jpg">
+		<div class="breadcrumb-area">
+			<a href="{% url 'index_page' %}">Home</a> / <span>Notices</span>
+		</div>
+	</div>
+	<!-- Page top section end -->
+
+    <!-- Services section start -->
+	<section class="services-section spad">
+		<div class="container-fluid services-warp">
+            <div class="container p-0">
+{#                <div class="row">#}
+                    <h3 class="sp-title" style="text-align: center">Notice</h3>
+                    {% for ann in announces %}
+                    <p>{{ ann.title }} | {{ ann.author }}</p>
+                    {% endfor %}
+{#                </div>#}
+            </div>
+            <br/>
+		</div>
+	</section>
+	<!-- Services section start end -->
+{% endblock %}
