@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <!-- Page top section start -->
+	<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/1.jpg" %}">
+		<div class="breadcrumb-area">
+			<a href="{% url 'index_page' %}">Home</a> / <span>Members</span>
+		</div>
+	</div>
+	<!-- Page top section end -->
+
+    <!-- Services section start -->
+	<section class="portfolio-section">
+        <div class="sp-pad spad">
+			<!-- portfolio filter menu -->
+			<ul class="portfolio-filter controls" style="margin-top: -100px">
+                <li class="control" style="font-size: 12pt"><a href="{% url 'member_page' %}" style="color: #000000">Director</a></li>
+                <li class="control"><a href="{% url 'member_senior' %}" style="color: #868686">Senior Researchers</a></li>
+                <li class="control"><a href="{% url 'member_res' %}" style="color: #868686">Researchers</a></li>
+			</ul>
+		</div>
+		<div class="container-fluid services-warp" style="margin-top: -100px">
+            <div class="container p-0">
+                <div class="row">
+                    <h3 class="sp-title" style="text-align: center">Director</h3>
+                </div>
+                {% for direct in directors %}
+                    {% if direct.thumb %}
+                    <figure class="intro-img mt-5 mt-xl-0">
+                        <img src="{{ direct.thumb }}">
+                    </figure>
+                    {% endif %}
+                    <p>{{ direct.name }}</p>
+                    {% if direct.desc %}
+                    <p>{{ direct.desc }}</p>
+                    {% endif %}
+                    {% if direct.email %}
+                    <p>{{ direct.email }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <br/>
+		</div>
+	</section>
+	<!-- Services section start end -->
+
+{% endblock %}

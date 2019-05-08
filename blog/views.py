@@ -12,7 +12,16 @@ def research_page(request):
     return render(request, 'blog/research.html')
 
 def member_page(request):
-    return render(request, 'blog/member.html')
+    directors = Member.objects.filter(type='D')
+    return render(request, 'blog/member_direct.html', {'directors': directors})
+
+def member_senior(request):
+    seniors = Member.objects.filter(type='S')
+    return render(request, 'blog/member_senior.html', {'seniors': seniors})
+
+def member_res(request):
+    researchers = Member.objects.filter(type='R')
+    return render(request, 'blog/member_res.html', {'researchers': researchers})
 
 def notice_page(request):
     announces = Announce.objects.all().order_by('published_date')

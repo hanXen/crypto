@@ -19,7 +19,15 @@ class Announce(models.Model):
         return self.title
 
 class Member(models.Model):
-    type = models.CharField(max_length=200, default='Researcher')
+    D = 'D'
+    S = 'S'
+    R = 'R'
+    CHOICE = (
+        (D, "Director"),
+        (S, "Senior"),
+        (R, "Researcher"),
+    )
+    type = models.CharField(max_length=20, choices=CHOICE, default='R')
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200, null=True, blank=True)
     thumb = models.URLField(max_length=200, null=True, blank=True)
