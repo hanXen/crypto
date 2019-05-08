@@ -26,9 +26,9 @@
                     <tbody>
                         {% for ann in announces %}
                             <tr>
-                                <td><a href="{% url 'index_page' %}" style="color: #000000">{{ ann.title }}</a></td>
+                                <td><a href="{% url 'notice_each' id=ann.pk %}" style="color: #000000">{{ ann.title }}</a></td>
                                 <td>{{ ann.author }}</td>
-                                <td>{{ ann.published_date }}</td>
+                                <td>{{ ann.created_date }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>

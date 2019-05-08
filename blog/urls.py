@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^research/$', views.research_page, name='research_page'),
     url(r'^member/$', views.member_page, name='member_page'),
     url(r'^notice/$', views.notice_page, name='notice_page'),
+    url(r'^notice/(?P<id>[0-9]+)/$', views.notice_each, name='notice_each'),
     url(r'^contact/$', views.contact_page, name='contact_page'),
 
 ]
