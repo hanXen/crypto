@@ -25,24 +25,36 @@
                 <div class="row">
                     <h3 class="sp-title" style="text-align: center">Director</h3>
                 </div>
+
                 {% for direct in directors %}
+                    <div class="row">
                     {% if direct.thumb %}
                     <figure class="intro-img mt-5 mt-xl-0">
                         <img src="{{ direct.thumb }}">
                     </figure>
+                    {% else %}
+                    <figure class="intro-img mt-5 mt-xl-0">
+                        <img src="http://protocol.korea.ac.kr/wp-content/uploads/2018/12/graduate-cap-isometric-3d-icon-vector-6971581.jpg">
+                    </figure>
                     {% endif %}
-                    <p>{{ direct.name }}</p>
+                    <div style="margin-left: 20px">
+                        <p style="font-size: 13pt"><strong>{{ direct.name }}</strong></p>
                     {% if direct.desc %}
-                    <p>{{ direct.desc }}</p>
+                    <p><i class="flaticon-laptop" style="margin-right: 5px"></i> {{ direct.desc }}</p>
                     {% endif %}
                     {% if direct.email %}
-                    <p>{{ direct.email }}</p>
+                    <p><i class="flaticon-envelope" style="margin-right: 5px"></i> {{ direct.email }}</p>
                     {% endif %}
+                    </div>
+                    </div>
                 {% endfor %}
             </div>
             <br/>
 		</div>
 	</section>
 	<!-- Services section start end -->
+    <div style="height: 120px">
+
+    </div>
 
 {% endblock %}
