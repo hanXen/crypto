@@ -3,7 +3,7 @@
 
 {% block content %}
 	<!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/1.jpg" %}">
+	<div class="page-top-area set-bg" data-setbg="https://wallpaperaccess.com/full/210978.jpg">
 		<div class="breadcrumb-area">
 			<a href="{% url 'index_page' %}">Home</a> / <span>About us</span>
 		</div>
@@ -12,8 +12,16 @@
 
 
 	<!-- Intro section start -->
-	<section class="services-section spad">
-    <div class="container-fluid services-warp">
+	<section class="portfolio-section">
+        <div class="sp-pad spad">
+			<!-- portfolio filter menu -->
+			<ul class="portfolio-filter controls" style="margin-top: -100px">
+                <li class="control" style="font-size: 12pt"><a href="/about/" style="color: #000000">English</a></li>
+                <li class="control"><a href="/about/kor/" style="color: #868686">한국어</a></li>
+                {#<li class="control"><a href="/member/research/" style="color: #868686">Researchers</a></li>#}
+			</ul>
+		</div>
+    <div class="container-fluid services-warp" style="margin-top:-100px">
 		<div class="container p-0">
 {#			<div class="row">#}
 {#				<div class="col-xl-4">#}

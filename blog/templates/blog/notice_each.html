@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="{% static "img/headers-bg/1.jpg" %}">
+	<div class="page-top-area set-bg" data-setbg="https://wallpaperaccess.com/full/210978.jpg">
 		<div class="breadcrumb-area">
 			<a href="{% url 'index_page' %}">Home</a> / <span>Notices</span>
 		</div>
@@ -30,7 +30,9 @@
                     </tr>
                     <tr>
                         <th scope="row" style="white-space: nowrap">첨부파일</th>
-                        <td>announce.file</td>
+                        {% if announce.attach %}
+                        <td><a href='{{ announce.attach.url }}'>{{ announce.attach }}</a></td>
+                        {% endif %}
                     </tr>
                 </table>
             </div>

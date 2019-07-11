@@ -10,6 +10,7 @@ class Announce(models.Model):
         default=timezone.now)
     published_date = models.DateTimeField(
         blank=True, null=True)
+    attach = models.FileField(upload_to='uploads/%Y/%m/%d/', blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()

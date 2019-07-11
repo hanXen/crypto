@@ -8,6 +8,9 @@ def index_page(request):
 def about_page(request):
     return render(request, 'blog/about.html')
 
+def aboutkor_page(request):
+    return render(request, 'blog/about_kor.html')
+
 def research_page(request):
     return render(request, 'blog/research.html')
 
